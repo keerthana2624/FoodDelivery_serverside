@@ -7,4 +7,5 @@ const userSchema = new mongoose.Schema({
     address : {type : String, required: true},
 })
 
-const user = mongoose.model('user', userSchema);
+const User = mongoose.model('user', userSchema);
+module.exports = User;
