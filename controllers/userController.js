@@ -1,5 +1,7 @@
 const User = require('../models/userModel');
 
+
+
 exports.register = async (req, res) => {
     try {
         // Retrieve the data from req body
