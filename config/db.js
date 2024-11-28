@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose')
-mongo_conn_str = 'mongodb+srv://keerthikeerthana:keerthi>@cluster0.nkt2a.mongodb.net/delivery?retryWrites=true&w=majority&appName=Cluster0'
+mongo_conn_str = 'mongodb+srv://keerthikeerthana:keerthi2624@cluster0.nkt2a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 const connectToDB = async() => {
     try {
