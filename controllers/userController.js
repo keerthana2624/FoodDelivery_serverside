@@ -1,4 +1,4 @@
-const User = require('../models/userModel');
+const user = require('../models/userModel');
 
 exports.register = async (req, res) => {
     try {
@@ -77,3 +77,5 @@ exports.login = async (req, res) => {
         });
     }
 };
+
+
