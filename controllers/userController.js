@@ -1,4 +1,4 @@
-const User = require('../models/userModel');
+const user = require('../models/userModel');
 
 exports.register = async (req, res) => {
     try {
@@ -77,3 +77,43 @@ exports.login = async (req, res) => {
         });
     }
 };
+
+
+const Restaurant = require('../models/RestaurantModel');
+
+exports.registerRestaurant = async (req, res) => {
+    try {
+        // Retrieve the data from req body
+        const { id, name, address, contactInfo, rating } = req.body;
+
+        // Validate required fields
+        if (!id || !name || !address) {
+            return res.status(400).json({ message: 'ID, name, and address are required.' });
+        }
+
+        // Create a new restaurant instance
+        const newRestaurant = new Restaurant({
+            id,
+            name,
+            address,
+            contactInfo,
+            rating
+        });
+
+        // Save the restaurant to the database
+        const savedRestaurant = await newRestaurant.save();
+
+        // Send back a success response
+        res.status(201).json({
+            message: 'Restaurant registered successfully!',
+            restaurant: savedRestaurant
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: 'An error occurred while registering the restaurant.',
+            error: error.message
+        });
+    }
+};
+
