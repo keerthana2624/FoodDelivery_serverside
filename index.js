@@ -10,6 +10,8 @@ connectToDB();
 app.use(express.json());
 app.use('/api/users', userRoutes);
 
+app.use('/api/restaurants', restaurantRoutes)
+
 app.get('/', (req, res)=>{
     res.status(200).send({message:'success'})
 })

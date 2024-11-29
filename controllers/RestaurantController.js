@@ -1,5 +1,6 @@
-const Restaurant = require('../models/restaurantModel');
+const Restaurant = require('../models/RestaurantModel');
 
+// Register a new restaurant
 exports.registerRestaurant = async (req, res) => {
     try {
         const { id, name, address, contactInfo, rating } = req.body;
@@ -15,9 +16,10 @@ exports.registerRestaurant = async (req, res) => {
     }
 };
 
+// Get a restaurant by ID
 exports.getRestaurantById = async (req, res) => {
     try {
-        const { id } = req.body;
+        const { id } = req.params; // Use req.params for URL parameters
         const restaurant = await Restaurant.findOne({ id });
 
         if (!restaurant) {

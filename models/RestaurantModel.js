@@ -8,5 +8,5 @@ const restaurantSchema = new mongoose.Schema({
     rating: { type: Number, default: 0 },
 });
 
-const Restaurant = mongoose.model('restaurant', restaurantSchema);
+const Restaurant = mongoose.model('Restaurant', restaurantSchema); // Model name 'Restaurant' for consistency
 module.exports = Restaurant;

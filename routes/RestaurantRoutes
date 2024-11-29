@@ -2,8 +2,10 @@ const express = require('express');
 const restaurantController = require('../controllers/RestaurantController');
 const router = express.Router();
 
-// Ensure functions exist in the controller
+// Register a new restaurant
 router.post('/register', restaurantController.registerRestaurant);
-router.post('/get', restaurantController.getRestaurantById);
+
+// Get a restaurant by ID (using URL parameter)
+router.get('/:id', restaurantController.getRestaurantById); // GET request for fetching a restaurant by ID
 
 module.exports = router;
