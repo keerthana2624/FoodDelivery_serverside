@@ -1,0 +1,9 @@
+const express = require('express');
+const restaurantController = require('../controllers/RestaurantController');
+const router = express.Router();
+
+// Ensure functions exist in the controller
+router.post('/register', restaurantController.registerRestaurant);
+router.post('/get', restaurantController.getRestaurantById);
+
+module.exports = router;

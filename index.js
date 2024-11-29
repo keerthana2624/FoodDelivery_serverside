@@ -3,6 +3,7 @@
 const express = require('express')
 const connectToDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
+const restaurantRoutes = require('./routes/RestaurantRoutes');
 const app = express()
 
 connectToDB();
